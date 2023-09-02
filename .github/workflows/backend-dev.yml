@@ -1,0 +1,17 @@
+name: backend-dev
+
+on:
+    push:
+        branches:
+            - main
+jobs:
+    deploy_function:
+        runs-on: ubuntu-18.04
+        steps:
+            - name: Echo the message
+              run: |
+                echo "hola mundo"
+
+            
+
+
