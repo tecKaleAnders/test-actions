@@ -33,6 +33,8 @@ jobs:
       - name: Create SA key
         run: echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}' > $HOME/gcloud.json
 
-      - name: Deploy Cloud Functions
-        if: github.ref == 'refs/heads/main'
-        run: export GOOGLE_APPLICATION_CREDENTIALS=$HOME/gcloud.json && npm i -g firebase-tools@11.0.0  && firebase deploy --only functions --json
+      - name: Set GOOGLE_APPLICATION_CREDENTIALS
+        run: echo "GOOGLE_APPLICATION_CREDENTIALS=$HOME/gcloud.json" >> $GITHUB_ENV
+
+      - name: Deploy Firebase Functions
+        run: npx firebase-tools@11.0.0 deploy --only functions --json
