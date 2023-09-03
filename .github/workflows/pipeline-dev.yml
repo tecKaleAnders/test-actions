@@ -35,4 +35,4 @@ jobs:
 
       - name: Deploy Cloud Functions
         if: github.ref == 'refs/heads/main'
-        run: export GOOGLE_APPLICATION_CREDENTIALS=$HOME/gcloud.json && npx firebase-tools@11.0.0 deploy --only functions --json
+        run: export GOOGLE_APPLICATION_CREDENTIALS=$HOME/gcloud.json && npm i -g firebase-tools@11.0.0 deploy --only functions --json
