@@ -15,5 +15,5 @@ import * as logger from "firebase-functions/logger";
 
 export const helloWorld = onRequest((request, response) => {
   logger.info("Hello logs!", {structuredData: true});
-  response.send("Hello from Firebase! this is a deploy today with version 18 new");
+  response.send("hello world");
 });
