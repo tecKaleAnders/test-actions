@@ -36,8 +36,6 @@ jobs:
       - name: Set GOOGLE_APPLICATION_CREDENTIALS
         run: echo "GOOGLE_APPLICATION_CREDENTIALS=$HOME/gcloud.json" >> $GITHUB_ENV
 
-      - name: Install Firebase Tools
-        run: npm i -g firebase-tools@11.0.0
 
       - name: Deploy Firebase Functions
-        run: firebase deploy --only functions --json
+        run: npx firebase-tools deploy --only functions --json
